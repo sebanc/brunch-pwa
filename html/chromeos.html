@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="manifest" href="../manifest.webmanifest">
+		<link rel="stylesheet" href="../css/style.css">
+		<script src="../js/cookie.js" type="text/javascript"></script>
+		<script src="../js/ws.js" type="text/javascript"></script>
+		<script src="../js/chromeos.js" type="text/javascript"></script>
+		<title>Brunch PWA</title>
+	</head>
+	<body>
+		<div class="navbar">
+			<a href="chromeos.html" class="active">ChromeOS updater</a>
+			<a href="../index.html">Brunch updater</a>
+			<a href="addons.html">Add-ons</a>
+			<a href="settings.html" class="right">Settings</a>
+		</div>
+		<div class="wrap">
+			<div class="fleft">
+				<center>
+					<br><br>
+					<p id="chromeos-version"></p>
+					<br>
+					<p id="latest-chromeos"></p><form id="form3"></form>
+				</center>
+			</div>
+			<div class="fright">
+				<br>
+				<div id="log" class="box"></div>
+			</div>
+		</div>
+	</body>
+</html>
