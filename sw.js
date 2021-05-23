@@ -38,7 +38,7 @@ self.addEventListener('fetch', function(event) {
 	);
 });
 
-const GetVersion = async () => {
+const getversion = async () => {
 	console.log('In periodicsync handler');
 	ws_connect();
 	setTimeout(() => { ws.send("latest-stable\nlatest-unstable\nlatest-chromeos"); }, 2000);
@@ -47,7 +47,7 @@ const GetVersion = async () => {
 self.addEventListener('periodicsync', event => {
 	console.log('syncing started.');
 	if (event.tag == 'get-latest-version') {
-		event.waitUntil(GetVersion());
+		event.waitUntil(getversion());
 	}
 });
 
