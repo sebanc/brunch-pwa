@@ -5,6 +5,10 @@ function refresh_data() {
 	console.log("Data refresh requested without display");
 }
 
+function reboot() {
+	ws.send("reboot");
+};
+
 async function showNotification(notification_text, tabname) {
 	const title = 'Brunch PWA';
 	const options = {
