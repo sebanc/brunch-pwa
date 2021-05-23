@@ -22,25 +22,22 @@ window.onload = function () {
 		var chromeos = await getCookie("chromeos");
 		
 		if (notifications.value == "yes") {
-				document.getElementById("intro").innerHTML = '<b>Display update notifications for:</b>';
+			document.getElementById("intro").innerHTML = '<b>Display update notifications for:</b>';
 			if (brunch_stable.value == "yes") {
 				document.getElementById("notifications-stable").innerHTML = 'Brunch stable releases: <input type="checkbox" id="notify_stable" checked/>';
 			} else {
 				document.getElementById("notifications-stable").innerHTML = 'Brunch stable releases: <input type="checkbox" id="notify_stable"/>';
 			};
-
 			if (brunch_unstable.value == "yes") {
 				document.getElementById("notifications-unstable").innerHTML = 'Brunch unstable releases: <input type="checkbox" id="notify_unstable" checked/>';
 			} else {
 				document.getElementById("notifications-unstable").innerHTML = 'Brunch unstable releases: <input type="checkbox" id="notify_unstable"/>';
 			};
-
 			if (chromeos.value == "yes") {
 				document.getElementById("notifications-chromeos").innerHTML = 'ChromeOS recovery images: <input type="checkbox" id="notify_chromeos" checked/>';
 			} else {
 				document.getElementById("notifications-chromeos").innerHTML = 'ChromeOS recovery images: <input type="checkbox" id="notify_chromeos"/>';
 			};
-
 			document.getElementById('notify_stable').addEventListener('change', (event) => {
 				if (event.currentTarget.checked) {
 					setCookie("brunch_stable","yes");
@@ -48,7 +45,6 @@ window.onload = function () {
 					setCookie("brunch_stable","no");
 				}
 			})
-
 			document.getElementById('notify_unstable').addEventListener('change', (event) => {
 				if (event.currentTarget.checked) {
 					setCookie("brunch_unstable","yes");
@@ -56,7 +52,6 @@ window.onload = function () {
 					setCookie("brunch_unstable","no");
 				}
 			})
-
 			document.getElementById('notify_chromeos').addEventListener('change', (event) => {
 				if (event.currentTarget.checked) {
 					setCookie("chromeos","yes");

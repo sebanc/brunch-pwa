@@ -51,8 +51,7 @@ self.addEventListener('periodicsync', event => {
 	}
 });
 
-self.addEventListener('notificationclick', function (event)
-{
+self.addEventListener('notificationclick', function (event) {
 	console.log(event.notification.data.tab);
 	const rootUrl = new URL('/brunch-pwa/', location).href;
 	var targetUrl;

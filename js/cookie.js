@@ -1,25 +1,25 @@
 async function setCookie(name, value) {
-await cookieStore.set({
-  name: name,
-  value: value,
-  expires: Date.now() + (10*365*24*60*60*1000),
-  secure: (new URL(self.location.href)).protocol === 'https:',
-  httpOnly: false,
-});
+	await cookieStore.set({
+		name: name,
+		value: value,
+		expires: Date.now() + (10*365*24*60*60*1000),
+		secure: (new URL(self.location.href)).protocol === 'https:',
+		httpOnly: false,
+	});
 }
 
 async function getCookie(name) {
-cookie = await cookieStore.get(name);
-if (cookie) {
-    console.log(`Found ${cookie.name} cookie: ${cookie.value}`);
-    return cookie;
-} else {
-    console.log('Cookie not found');
-}
+	cookie = await cookieStore.get(name);
+	if (cookie) {
+		console.log(`Found ${cookie.name} cookie: ${cookie.value}`);
+		return cookie;
+	} else {
+		console.log('Cookie not found');
+	}
 }
 
 async function eraseCookie(name) {   
-await cookieStore.delete(name);
+	await cookieStore.delete(name);
 }
 
 async function checkCookie() {

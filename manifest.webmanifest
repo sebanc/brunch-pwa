@@ -4,7 +4,7 @@
 	"description": "A PWA to manage brunch devices",
 	"start_url": "./",
 	"scope": "/brunch-pwa/",
-	"display": "standalone",
+	"display": "minimal-ui",
 	"background_color": "#2A3443",
 	"theme_color": "#2A3443",
 	"icons": [{
