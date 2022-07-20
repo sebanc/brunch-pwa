@@ -89,6 +89,8 @@ window.onload = function () {
 			}
 		}
 	});
+	
+	document.getElementById("warning").innerHTML = '<b>Warning: Updating to Brunch r103 will prevent you to access your data. Make sure to backup your data before updating and to powerwash after the update.</b>';
 
 	document.getElementById("form").onsubmit = function () {
 		document.getElementById("log").style.background = "#A9A9A9";
