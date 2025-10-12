@@ -20,30 +20,18 @@ window.onload = function () {
 	};
 	
 	if (navigator.onLine) {
-	document.getElementById("form4").innerHTML = '<button type="submit" class="buttonstyle">Install / Update the brunch-toolchain and brioche</button>';
-	document.getElementById("warning").innerHTML = '<b>Warning: This will remove any data installed in /usr/local (notably the brunch-toolkit / chromebrew / crouton)</b>';
-	document.getElementById("form5").innerHTML = '<button type="submit" class="buttonstyle">Install / Update the brunch-toolkit</button>';
+		document.getElementById("form4").innerHTML = '<button type="submit" class="buttonstyle">Install / Update the brunch-toolchain</button>';
+		document.getElementById("warning").innerHTML = '<b>Warning: This will remove any data installed in /usr/local (notably chromebrew / crouton)</b>';
 
-	document.getElementById("form4").onsubmit = function () {
-		document.getElementById("log").style.background = "#A9A9A9";
-		log = "<center><b>Console log:</b></center><br>";
-		document.getElementById("log").innerHTML = log;
-		if (!ws) {
+		document.getElementById("form4").onsubmit = function () {
+			document.getElementById("log").style.background = "#A9A9A9";
+			log = "<center><b>Console log:</b></center><br>";
+			document.getElementById("log").innerHTML = log;
+			if (!ws) {
+				return false;
+			}
+			ws.send("install-toolchain");
 			return false;
-		}
-		ws.send("install-toolchain");
-		return false;
-	};
-
-	document.getElementById("form5").onsubmit = function () {
-		document.getElementById("log").style.background = "#A9A9A9";
-		log = "<center><b>Console log:</b></center><br>";
-		document.getElementById("log").innerHTML = log;
-		if (!ws) {
-			return false;
-		}
-		ws.send("install-toolkit");
-		return false;
-	};
+		};
 	}
 };
