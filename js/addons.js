@@ -20,9 +20,7 @@ window.onload = function () {
 	};
 	
 	if (navigator.onLine) {
-		document.getElementById("form4").innerHTML = '<button type="submit" class="buttonstyle">Install / Update the brunch-toolchain</button>';
-		document.getElementById("warning").innerHTML = '<b>Warning: This will remove any data installed in /usr/local (notably chromebrew / crouton)</b>';
-
+		document.getElementById("form4").innerHTML = '<button type="submit" class="buttonstyle">Install the Gentoo prefix</button>';
 		document.getElementById("form4").onsubmit = function () {
 			document.getElementById("log").style.background = "#A9A9A9";
 			log = "<center><b>Console log:</b></center><br>";
@@ -30,7 +28,7 @@ window.onload = function () {
 			if (!ws) {
 				return false;
 			}
-			ws.send("install-toolchain");
+			ws.send("install-gentoo-prefix");
 			return false;
 		};
 	}
